@@ -64,7 +64,7 @@ class CalcControllerTest {
     }
     
     @Test
-    public void whenNegativeNumber() {
+    public void whenNegativeNumber2() {
         var input = new TwoArgs(-1, -1);
         var expected = new Result(-2);
         var output = new CalcController().summarise(input);
