@@ -56,9 +56,8 @@ pipeline {
             }
         }
     }
-}
-
-post {
+    
+    post {
     always {
         script {
             def buildInfo = "Build number: ${currentBuild.number}\n" +
@@ -68,4 +67,5 @@ post {
             telegramSend(message: buildInfo)
         }
     }
+}
 }
