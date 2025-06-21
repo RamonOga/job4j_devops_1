@@ -64,7 +64,7 @@ pipeline {
                                 "Build status: ${currentBuild.currentResult}\n" +
                                 "Started at: ${new Date(currentBuild.startTimeInMillis)}\n" +
                                 "Duration so far: ${currentBuild.durationString}"
-                echo 'Sending telegram message'
+                echo 'Sending telegram message: \n${buildInfo}'
                 telegramSend(message: buildInfo)
             }
         }
