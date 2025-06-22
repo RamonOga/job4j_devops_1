@@ -1,0 +1,13 @@
+[versions]
+junitJupiter = "5.10.0"
+assertj = "3.24.2"
+lombok = "1.18.36"
+springBoot = "3.4.0"
+
+[libraries]
+junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junitJupiter" }
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web"}
+springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test"}
+junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher" }
