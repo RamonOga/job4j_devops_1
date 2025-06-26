@@ -53,7 +53,7 @@ tasks.withType<Test> {
 
 tasks.register<Zip>("zipJavaDoc") {
     group = "documentation" // Группа, в которой будет отображаться задача
-    description = "Packs the generated Javadoc into a zip archive!!!"
+    description = "Packs the generated Javadoc into a zip archive!"
 
     dependsOn("javadoc") // Указываем, что задача зависит от выполнения javadoc
 
