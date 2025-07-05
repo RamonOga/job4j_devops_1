@@ -11,19 +11,6 @@ plugins {
 group = "ru.job4j.devops"
 version = "1.0.0"
 
-buildCache {
-    remote<HttpBuildCache> {
-        url = uri(System.getenv("GRADLE_REMOTE_CACHE_URL"))
-        isAllowInsecureProtocol = true
-        isAllowUntrustedServer = true
-        isPush = System.getenv("GRADLE_REMOTE_CACHE_PUSH").toBoolean()
-        credentials {
-            username = System.getenv("GRADLE_REMOTE_CACHE_USERNAME")
-            password = System.getenv("GRADLE_REMOTE_CACHE_PASSWORD")
-        }
-    }
-}
-
 tasks.jacocoTestCoverageVerification {
     violationRules {
         rule {
@@ -129,4 +116,17 @@ tasks.test {
 
 application {
     mainClass = "ru.job4j.devops.CalcApplication"
+}
+
+buildCache {
+    remote<HttpBuildCache> {
+        url = uri(System.getenv("GRADLE_REMOTE_CACHE_URL"))
+        isAllowInsecureProtocol = true
+        isAllowUntrustedServer = true
+        isPush = System.getenv("GRADLE_REMOTE_CACHE_PUSH").toBoolean()
+        credentials {
+            username = System.getenv("GRADLE_REMOTE_CACHE_USERNAME")
+            password = System.getenv("GRADLE_REMOTE_CACHE_PASSWORD")
+        }
+    }
 }
