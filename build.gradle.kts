@@ -119,7 +119,7 @@ application {
 }
 
 buildCache {
-    remote<HttpBuildCache> {
+    remote(HttpBuildCache) {
         url = uri(System.getenv("GRADLE_REMOTE_CACHE_URL"))
         isAllowInsecureProtocol = true
         isAllowUntrustedServer = true
