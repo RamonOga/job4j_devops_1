@@ -11,7 +11,6 @@ pipeline {
                     }
                 }
             }
-        stage('Parallel build') {
         stage('Checkstyle Main') {
             steps {
                 script {
