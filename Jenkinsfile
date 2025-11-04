@@ -6,14 +6,14 @@ pipeline {
     }
 
     stages {
-        stage('Prepare Environment') {
-                steps {
-                    script {
-                        sh 'chmod +x ./gradlew'
-                    }
-                }
-            }
         stage('Parallel build') {
+            stage('Prepare Environment') {
+                            steps {
+                                script {
+                                    sh 'chmod +x ./gradlew'
+                                }
+                            }
+                        }
             parallel {
                 stage('Checkstyle Main') {
                     steps {
