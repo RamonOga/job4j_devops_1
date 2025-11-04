@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Parallel build')
+        stage('Parallel build') {
             parallel {
                 stage('Prepare Environment') {
                     steps {
