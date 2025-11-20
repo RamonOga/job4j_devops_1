@@ -1,6 +1,5 @@
 pipeline {
-    agent { label 'agent1' }
-
+    agent any
     tools {
         git 'Default'
     }
@@ -55,7 +54,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             script {
@@ -63,7 +62,7 @@ pipeline {
                                 "Build status: ${currentBuild.currentResult}\n" +
                                 "Started at: ${new Date(currentBuild.startTimeInMillis)}\n" +
                                 "Duration so far: ${currentBuild.durationString}"
-                echo 'Sending telegram message: \n${buildInfo}'
+                echo ' Sending telegram message: \n${buildInfo}'
                 telegramSend(message: buildInfo)
             }
         }
