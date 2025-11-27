@@ -11,45 +11,47 @@ pipeline {
 //                     }
 //                 }
 //             }
-        stage('Checkstyle Main') {
-            steps {
-                script {
-                    bat './gradlew checkstyleMain'
+        parallel {
+            stage('Checkstyle Main') {
+                steps {
+                    script {
+                        bat './gradlew checkstyleMain'
+                    }
                 }
             }
-        }
-        stage('Checkstyle Test') {
-            steps {
-                script {
-                    bat './gradlew checkstyleTest'
+            stage('Checkstyle Test') {
+                steps {
+                    script {
+                        bat './gradlew checkstyleTest'
+                    }
                 }
             }
-        }
-        stage('Compile') {
-            steps {
-                script {
-                    bat './gradlew compileJava'
+            stage('Compile') {
+                steps {
+                    script {
+                        bat './gradlew compileJava'
+                    }
                 }
             }
-        }
-        stage('Test') {
-            steps {
-                script {
-                    bat './gradlew test'
+            stage('Test') {
+                steps {
+                    script {
+                        bat './gradlew test'
+                    }
                 }
             }
-        }
-        stage('JaCoCo Report') {
-            steps {
-                script {
-                    bat './gradlew jacocoTestReport'
+            stage('JaCoCo Report') {
+                steps {
+                    script {
+                        bat './gradlew jacocoTestReport'
+                    }
                 }
             }
-        }
-        stage('JaCoCo Verification') {
-            steps {
-                script {
-                    bat './gradlew jacocoTestCoverageVerification'
+            stage('JaCoCo Verification') {
+                steps {
+                    script {
+                        bat './gradlew jacocoTestCoverageVerification'
+                    }
                 }
             }
         }
