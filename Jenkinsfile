@@ -7,49 +7,49 @@ pipeline {
         stage('Prepare Environment') {
                 steps {
                     script {
-                        sh 'chmod +x ./gradlew'
+                        bat 'chmod +x ./gradlew'
                     }
                 }
             }
         stage('Checkstyle Main') {
             steps {
                 script {
-                    sh './gradlew checkstyleMain'
+                    bat './gradlew checkstyleMain'
                 }
             }
         }
         stage('Checkstyle Test') {
             steps {
                 script {
-                    sh './gradlew checkstyleTest'
+                    bat './gradlew checkstyleTest'
                 }
             }
         }
         stage('Compile') {
             steps {
                 script {
-                    sh './gradlew compileJava'
+                    bat './gradlew compileJava'
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    sh './gradlew test'
+                    bat './gradlew test'
                 }
             }
         }
         stage('JaCoCo Report') {
             steps {
                 script {
-                    sh './gradlew jacocoTestReport'
+                    bat './gradlew jacocoTestReport'
                 }
             }
         }
         stage('JaCoCo Verification') {
             steps {
                 script {
-                    sh './gradlew jacocoTestCoverageVerification'
+                    bat './gradlew jacocoTestCoverageVerification'
                 }
             }
         }
