@@ -4,13 +4,13 @@ pipeline {
         git 'Default'
     }
     stages {
-        stage('Prepare Environment') {
-                steps {
-                    script {
-                        bat 'chmod +x ./gradlew'
-                    }
-                }
-            }
+//         stage('Prepare Environment') {
+//                 steps {
+//                     script {
+//                         bat 'chmod +x ./gradlew'
+//                     }
+//                 }
+//             }
         stage('Checkstyle Main') {
             steps {
                 script {
